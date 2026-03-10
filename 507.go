@@ -1,0 +1,15 @@
+func checkPerfectNumber(num int) bool {
+    if num % 2 == 1 {
+        return false
+    }
+    
+    sum := 1
+    sqrt := int(math.Sqrt(float64(num)))
+    for i := 2; i <= sqrt; i ++ {
+        if num % i == 0 {
+            sum += i + num / i
+        }
+    }
+
+    return sum == num
+}
